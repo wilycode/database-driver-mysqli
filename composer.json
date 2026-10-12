@@ -1,0 +1,86 @@
+{
+    "name": "wilycode/database-driver-mysqli",
+    "description": "MySQLi database driver and canonical query binder for PHP.",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.4",
+        "ext-mysqli": "*",
+        "wilycode/database-driver": "^0.1",
+        "wilycode/database-query": "^0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "WilyCode\\Database\\DriverMysqli\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WilyCode\\Database\\DriverMysqli\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Simon Piter"
+        }
+    ],
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "0.1.x-dev"
+        }
+    },
+    "archive": {
+        "exclude": [
+            "/tests",
+            "/examples",
+            "/docs",
+            "/benchmark",
+            "/benchmarks",
+            "/tools",
+            "/phpunit.xml",
+            "/phpunit.xml.dist",
+            "/CHANGELOG.md",
+            "/CONTRIBUTING.md",
+            "/CODE_OF_CONDUCT.md",
+            "/SECURITY.md",
+            "/composer.lock",
+            "/.github",
+            "/.gitignore",
+            "/.gitattributes",
+            "/.editorconfig",
+            "/.phpunit.cache",
+            "/.phpunit.result.cache",
+            "/phpstan.neon",
+            "/phpstan.neon.dist",
+            "/phpstan.*.neon",
+            "/phpstan.*.neon.dist",
+            "/pint.json",
+            "/rector.php",
+            "/psalm.xml",
+            "/psalm.xml.dist",
+            "/infection.json",
+            "/infection.json.dist"
+        ]
+    },
+    "keywords": [
+        "mysqli",
+        "mysql",
+        "database",
+        "php",
+        "driver",
+        "prepared-statements",
+        "query-builder",
+        "wilycode"
+    ],
+    "homepage": "https://github.com/wilycode/database-driver-mysqli",
+    "support": {
+        "issues": "https://github.com/wilycode/database-driver-mysqli/issues",
+        "source": "https://github.com/wilycode/database-driver-mysqli"
+    }
+}
