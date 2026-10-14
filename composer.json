@@ -1,12 +1,12 @@
 {
-    "name": "wilycode/database-driver-mysqli",
+    "name": "wilycode/database-mysqli",
     "description": "MySQLi database driver and canonical query binder for PHP.",
     "type": "library",
     "license": "MIT",
     "require": {
         "php": "^8.4",
         "ext-mysqli": "*",
-        "wilycode/database-driver": "^0.1",
+        "wilycode/database": "^0.1",
         "wilycode/database-query": "^0.1"
     },
     "require-dev": {
@@ -78,9 +78,12 @@
         "query-builder",
         "wilycode"
     ],
-    "homepage": "https://github.com/wilycode/database-driver-mysqli",
+    "homepage": "https://github.com/wilycode/database-mysqli",
     "support": {
-        "issues": "https://github.com/wilycode/database-driver-mysqli/issues",
-        "source": "https://github.com/wilycode/database-driver-mysqli"
+        "issues": "https://github.com/wilycode/database-mysqli/issues",
+        "source": "https://github.com/wilycode/database-mysqli"
+    },
+    "replace": {
+        "wilycode/database-driver-mysqli": "self.version"
     }
 }
