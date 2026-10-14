@@ -1,8 +1,8 @@
-# WilyCode Database Driver MySQLi
+# WilyCode Database MySQLi
 
 [![PHP 8.4+](https://img.shields.io/badge/PHP-8.4%2B-777BB4)](https://www.php.net/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Tests](https://github.com/wilycode/database-driver-mysqli/actions/workflows/tests.yml/badge.svg)](https://github.com/wilycode/database-driver-mysqli/actions/workflows/tests.yml)
+[![Tests](https://github.com/wilycode/database-mysqli/actions/workflows/tests.yml/badge.svg)](https://github.com/wilycode/database-mysqli/actions/workflows/tests.yml)
 
 **A lightweight MySQLi database driver and positional parameter binder for PHP 8.4+.** Implements WilyCode's shared database contract and works with compiled queries from WilyCode Database Query.
 
@@ -47,7 +47,7 @@ This package is a **database driver**, not a SQL query builder or ORM. It does n
 
 - PHP **8.4+** with the `mysqli` extension.
 - A compatible MySQL or MariaDB server for real database operations.
-- `wilycode/database-driver:^0.1` — shared interface and exceptions.
+- `wilycode/database:^0.1` — shared interface and exceptions.
 - `wilycode/database-query:^0.1` — canonical compiled queries and binder contract.
 
 Composer installs the two WilyCode dependencies automatically.
@@ -55,7 +55,7 @@ Composer installs the two WilyCode dependencies automatically.
 ## Installation
 
 ```bash
-composer require wilycode/database-driver-mysqli
+composer require wilycode/database-mysqli
 ```
 
 ## Connecting
@@ -268,7 +268,7 @@ try {
 
 ## Limitations and security
 
-- MySQLi is for MySQL-compatible databases; use [`wilycode/database-driver-pdo`](https://github.com/wilycode/database-driver-pdo) if you need PDO's driver ecosystem.
+- MySQLi is for MySQL-compatible databases; use [`wilycode/database-pdo`](https://github.com/wilycode/database-pdo) if you need PDO's driver ecosystem.
 - Queries with interpolated SQL **identifiers** (table/column names) are not protected by prepared statements. Validate identifiers or use trusted constants.
 - MySQLi accepts positional bindings. Use `MysqliBinder` for canonical named queries.
 - Nested transactions are not supported. Transactions require a transactional storage engine such as InnoDB.
@@ -301,14 +301,14 @@ Test files remain in Git but are excluded from Composer distribution archives.
 
 | Package | Purpose |
 | --- | --- |
-| [wilycode/database-driver](https://github.com/wilycode/database-driver) | Database interface, transactions, and shared exceptions. |
+| [wilycode/database](https://github.com/wilycode/database) | Database interface, transactions, and shared exceptions. |
 | [wilycode/database-query](https://github.com/wilycode/database-query) | Driver-independent SQL query builder and compiled query types. |
-| [wilycode/database-driver-pdo](https://github.com/wilycode/database-driver-pdo) | Alternate PDO-based database driver. |
+| [wilycode/database-pdo](https://github.com/wilycode/database-pdo) | Alternate PDO-based database driver. |
 | [wilycode/database-query-executor](https://github.com/wilycode/database-query-executor) | Higher-level execution of compiled queries. |
 
 ## Contributing
 
-Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) and [GitHub Issues](https://github.com/wilycode/database-driver-mysqli/issues).
+Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) and [GitHub Issues](https://github.com/wilycode/database-mysqli/issues).
 
 ## License
 
