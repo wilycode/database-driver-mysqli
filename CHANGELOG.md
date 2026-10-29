@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Add SQL dialect support and/or the platform capability needed by the dialect-aware executor; see README for migration and release ordering.
+
+
 All notable changes to WilyCode Database Driver MySQLi are documented here.
 
 ## [Unreleased]

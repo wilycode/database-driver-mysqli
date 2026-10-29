@@ -12,6 +12,10 @@
 >
 > **[Explore the WilyCode PHP ecosystem →](https://github.com/wilycode/wilycode)**
 
+## Platform detection
+
+MysqliDatabase implements PlatformProviderInterface and reports mysql. Requires database >=0.1.2; compatible with query 0.1 and 0.2. MySQL and MariaDB use the shared MySQL dialect.
+
 ## Contents
 
 - [Features](#features)

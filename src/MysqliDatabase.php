@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace WilyCode\Database\DriverMysqli;
 
-use mysqli;
-use mysqli_result;
-use mysqli_sql_exception;
-use mysqli_stmt;
 use Throwable;
 use WilyCode\Database\Driver\DatabaseInterface;
 use WilyCode\Database\Driver\Exception\ConnectionException;
@@ -15,8 +11,13 @@ use WilyCode\Database\Driver\Exception\DatabaseException;
 use WilyCode\Database\Driver\Exception\NestedTransactionException;
 use WilyCode\Database\Driver\Exception\QueryException;
 use WilyCode\Database\Driver\Exception\TransactionException;
+use WilyCode\Database\Driver\PlatformProviderInterface;
+use mysqli;
+use mysqli_result;
+use mysqli_sql_exception;
+use mysqli_stmt;
 
-final class MysqliDatabase implements DatabaseInterface
+final class MysqliDatabase implements DatabaseInterface, PlatformProviderInterface
 {
     private bool $inTransaction = false;
 
@@ -148,6 +149,11 @@ final class MysqliDatabase implements DatabaseInterface
         } catch (Throwable $e) {
             throw QueryException::fromThrowable($e, $query, $params);
         }
+    }
+
+    public function getPlatformName(): string
+    {
+        return 'mysql';
     }
 
     public function getLastInsertId(): string

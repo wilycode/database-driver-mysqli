@@ -48,6 +48,27 @@ jobs:
         run: |
           php -r "exit(extension_loaded('mysqli') ? 0 : 1);"
 
+      # Pin coordinated, unreleased dependencies; remove after their releases.
+      - name: Check out database dialect changes
+        uses: actions/checkout@v4
+        with:
+          repository: wilycode/database
+          ref: cacdacc2ee7591ed8bbbffb5e42fc82474ac8a65
+          path: .ci-deps/database
+
+      # Pin coordinated, unreleased dependencies; remove after their releases.
+      - name: Check out database-query dialect changes
+        uses: actions/checkout@v4
+        with:
+          repository: wilycode/database-query
+          ref: 786e7e2976e155604ded739174fc8e3dc6779c5a
+          path: .ci-deps/database-query
+
+      - name: Use coordinated dependency versions for this draft
+        run: |
+          composer config repositories.dialect-database '{"type":"path","url":".ci-deps/database","options":{"versions":{"wilycode/database":"0.1.2"}}}'
+          composer config repositories.dialect-database-query '{"type":"path","url":".ci-deps/database-query","options":{"versions":{"wilycode/database-query":"0.2.0"}}}'
+
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist --no-progress
 
